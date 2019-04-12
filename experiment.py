@@ -551,7 +551,8 @@ def default_hparams():
       decay_steps=2000,
       leaky=False,
       # learning_rate=0.001,
-      learning_rate=0.01,  # test1
+      # learning_rate=0.01,  # test1 -- fail
+      learning_rate=0.005,
       loss_type='margin',
       num_prime_capsules=16,
       padding='VALID',
