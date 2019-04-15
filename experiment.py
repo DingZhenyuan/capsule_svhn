@@ -553,7 +553,8 @@ def default_hparams():
       # learning_rate=0.001,
       # learning_rate=0.01,  # test1 -- fail
       # learning_rate=0.005,  # test2 -- fail
-      learning_rate = 0.002,  # test3
+      # learning_rate = 0.002,  # test3 -- 21.44
+      learning_rate=0.0005,  # test4 --
       loss_type='margin',
       num_prime_capsules=16,
       padding='VALID',
