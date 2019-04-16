@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="553" column="26" lean-forward="true" selection-start-line="553" selection-start-column="26" selection-end-line="553" selection-end-column="26" />
+            <state relative-caret-position="308">
+              <caret line="528" column="39" lean-forward="true" selection-start-line="528" selection-start-column="39" selection-end-line="528" selection-end-column="39" />
               <folding>
                 <element signature="e#742#780#0" expanded="true" />
               </folding>
@@ -482,7 +482,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555287939816</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="更改learning_rate放弃,最有learning_rate0.001">
+      <created>1555375493138</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1555375493138</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修改batchsize减半.">
+      <created>1555375887482</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1555375887482</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -530,7 +544,7 @@
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19690502" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.032822758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -546,7 +560,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.31109926" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.5917823" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12966916" />
@@ -586,7 +600,9 @@
     <MESSAGE value="更改learning_rate(0.001-&gt;0.005)" />
     <MESSAGE value="更改learning_rate(0.001-&gt;0.002)" />
     <MESSAGE value="更改learning_rate(0.001-&gt;0.0005)" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改learning_rate(0.001-&gt;0.0005)" />
+    <MESSAGE value="更改learning_rate放弃,最有learning_rate0.001" />
+    <MESSAGE value="修改batchsize减半." />
+    <option name="LAST_COMMIT_MESSAGE" value="修改batchsize减半." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/models/__init__.py">
@@ -724,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="553" column="26" lean-forward="true" selection-start-line="553" selection-start-column="26" selection-end-line="553" selection-end-column="26" />
+        <state relative-caret-position="308">
+          <caret line="528" column="39" lean-forward="true" selection-start-line="528" selection-start-column="39" selection-end-line="528" selection-end-column="39" />
           <folding>
             <element signature="e#742#780#0" expanded="true" />
           </folding>
