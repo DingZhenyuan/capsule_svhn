@@ -329,7 +329,9 @@ def train(hparams, summary_dir, num_gpus, model_type, max_steps, save_step,
   # summary_dir = str(summary_dir) + '/train/'
   with tf.Graph().as_default():
     # Build model
-    features = get_features('train', 128, num_gpus, data_dir, num_targets,
+    # features = get_features('train', 128, num_gpus, data_dir, num_targets,
+    #                         dataset, validate)
+    features = get_features('train', 64, num_gpus, data_dir, num_targets,
                             dataset, validate)
     model = models[model_type](hparams)
     result, _ = model.multi_gpu(features, num_gpus)
@@ -389,7 +391,9 @@ def evaluate(hparams, summary_dir, num_gpus, model_type, eval_size, data_dir,
   load_dir = summary_dir + '/train/'
   summary_dir += '/test/'
   with tf.Graph().as_default():
-    features = get_features('test', 100, num_gpus, data_dir, num_targets,
+    # features = get_features('test', 100, num_gpus, data_dir, num_targets,
+    #                         dataset, validate)
+    features = get_features('test', 50, num_gpus, data_dir, num_targets,
                             dataset, validate)
     model = models[model_type](hparams)
     result, _ = model.multi_gpu(features, num_gpus)
@@ -519,7 +523,8 @@ def evaluate_ensemble(hparams, model_type, eval_size, data_dir, num_targets,
       checkpoints.append(file_name)
 
   with tf.Graph().as_default():
-    batch_size = 100
+    # batch_size = 100
+    batch_size = 50
     features = get_features('test', batch_size, 1, data_dir, num_targets,
                             dataset)[0]
     model = models[model_type](hparams)
