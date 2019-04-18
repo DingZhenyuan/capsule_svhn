@@ -329,10 +329,10 @@ def train(hparams, summary_dir, num_gpus, model_type, max_steps, save_step,
   # summary_dir = str(summary_dir) + '/train/'
   with tf.Graph().as_default():
     # Build model
-    # features = get_features('train', 128, num_gpus, data_dir, num_targets,
-    #                         dataset, validate)
-    features = get_features('train', 32, num_gpus, data_dir, num_targets,
+    features = get_features('train', 128, num_gpus, data_dir, num_targets,
                             dataset, validate)
+    # features = get_features('train', 32, num_gpus, data_dir, num_targets,
+    #                         dataset, validate)
     model = models[model_type](hparams)
     result, _ = model.multi_gpu(features, num_gpus)
     # Print stats
@@ -393,7 +393,7 @@ def evaluate(hparams, summary_dir, num_gpus, model_type, eval_size, data_dir,
   with tf.Graph().as_default():
     # features = get_features('test', 100, num_gpus, data_dir, num_targets,
     #                         dataset, validate)
-    features = get_features('test', 25, num_gpus, data_dir, num_targets,
+    features = get_features('test', 100, num_gpus, data_dir, num_targets,
                             dataset, validate)
     model = models[model_type](hparams)
     result, _ = model.multi_gpu(features, num_gpus)
@@ -523,8 +523,7 @@ def evaluate_ensemble(hparams, model_type, eval_size, data_dir, num_targets,
       checkpoints.append(file_name)
 
   with tf.Graph().as_default():
-    # batch_size = 100
-    batch_size = 25
+    batch_size = 100
     features = get_features('test', batch_size, 1, data_dir, num_targets,
                             dataset)[0]
     model = models[model_type](hparams)
@@ -553,6 +552,7 @@ def default_hparams():
   """Builds an HParam object with default hyperparameters."""
   return tf.contrib.training.HParams(
       decay_rate=0.96,
+      # decay_rate=0.90,
       decay_steps=2000,
       leaky=False,
       learning_rate=0.001,
@@ -587,6 +587,7 @@ def main(_):
       evaluate_ensemble(hparams, FLAGS.model, FLAGS.eval_size, FLAGS.data_dir,
                         FLAGS.num_targets, FLAGS.dataset, FLAGS.checkpoint,
                         FLAGS.num_trials)
+
 
 if __name__ == '__main__':
   tf.app.run()
