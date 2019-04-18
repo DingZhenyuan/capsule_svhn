@@ -67,7 +67,7 @@ def inputs(data_dir,
 
     with tf.name_scope('input'):
         filename_queue = tf.train.string_input_producer(
-            filename, shuffle=False)
+            filename, shuffle=(split == 'train'))
 
         features, image_dim = _read_and_decode(filename_queue, batch_size)
 
