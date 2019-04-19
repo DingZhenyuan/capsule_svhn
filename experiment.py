@@ -93,8 +93,7 @@ def get_features(split, total_batch_size, num_gpus, data_dir, num_targets,
   features = []
 
   for i in range(num_gpus):
-    # with tf.device('/gpu:%d' % i):
-    with tf.device('/gpu:0'):
+    with tf.device('/gpu:%d' % i):
       if dataset == 'mnist':
         features.append(
             mnist_input_record.inputs(

@@ -37,7 +37,7 @@ def weight_variable(shape, stddev=0.1, verbose=False):
   Returns:
     Weight variable tensor of shape=shape.
   """
-  with tf.device('/cpu:0'):
+  with tf.device('/gpu:0'):
     with tf.name_scope('weights'):
       weights = tf.get_variable(
           'weights',
@@ -59,7 +59,7 @@ def bias_variable(shape, verbose=False):
   Returns:
     Bias variable tensor with shape=shape.
   """
-  with tf.device('/cpu:0'):
+  with tf.device('/gpu:0'):
     with tf.name_scope('biases'):
       biases = tf.get_variable(
           'biases',
